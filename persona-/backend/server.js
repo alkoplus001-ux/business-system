@@ -106,10 +106,8 @@ connectDB();
 
 // 🔥 IMPORTANT: middleware order
 app.use(cors({
-  origin: [
-    'https://dazzling-pika-056e2c.netlify.app',
-    'https://persona-pfqu.vercel.app',
-    'https://persona-3.onrender.com',
+ origin: [
+    'https://business-system-psi.vercel.app', // ✅ ADD THIS
     'http://localhost:3000'
   ],
   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
