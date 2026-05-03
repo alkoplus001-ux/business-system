@@ -1,0 +1,112 @@
+/* Remove spinner buttons from number inputs */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spinner[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Sticky table header */
+.table-responsive {
+  max-height: 500px;
+  overflow-y: visible !important;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Minimum width for table so columns don't collapse */
+.table {
+  min-width: 700px;
+}
+
+/* Sticky header */
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  color: white;
+  z-index: 10;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  padding: 12px 14px;
+}
+
+/* Row hover effect */
+.table tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+
+@media (max-width: 900px) {
+  .table-responsive {
+    font-size: 13px;
+  }
+  .table, .table th, .table td {
+    min-width: 120px;
+    padding: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .table, .table th, .table td {
+    min-width: 90px;
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+.challan-wrapper .card, 
+.challan-wrapper .card-body,
+.challan-wrapper .row,
+.challan-wrapper .container,
+.challan-wrapper .table-responsive {
+  overflow: visible !important;
+  position: static !important;
+}
+/* vertical scroll only here */
+.challan-wrapper .challan-items-scroll {
+  max-height: 60vh;
+  overflow: auto;
+  position: relative;
+}
+
+/* horizontal scroll from Bootstrap, keep visible Y so lists aren't clipped */
+.challan-wrapper .challan-items-scroll .table-responsive {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  position: relative !important;
+}
+
+/* sticky header */
+.challan-wrapper .challan-items-scroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  color: #fff;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  padding: 12px 14px;
+}
+/* sirf EditChallan ke product items ke liye */
+.challan-wrapper .challan-items-scroll {
+  max-height: 60vh;     /* ya 420px */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.challan-wrapper .challan-items-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.challan-wrapper .challan-items-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+.challan-wrapper .challan-items-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}

@@ -1,0 +1,11 @@
+# Temporary files
+temp/
+*.pdf
+*.log
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
