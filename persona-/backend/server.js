@@ -106,15 +106,21 @@ connectDB();
 
 // 🔥 IMPORTANT: middleware order
 app.use(cors({
- origin: [
-    'https://business-system-psi.vercel.app', // ✅ ADD THIS
-    'http://localhost:3000'
-  ],
-  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'],
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      'https://business-system-psi.vercel.app',
+      'https://business-system-jphwnopoj-alkoplus001-uxs-projects.vercel.app',
+      'http://localhost:3000'
+    ];
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
-
 app.use(express.json());
 
 // ✅ COOKIE PARSER (yaha hona chahiye)
